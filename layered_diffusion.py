@@ -29,7 +29,7 @@ if "layer_model" in folder_paths.folder_names_and_paths:
 else:
     layer_model_root = os.path.join(folder_paths.models_dir, "layer_model")
 load_layer_model_state_dict = load_torch_file
-
+device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 # ------------ Start patching ComfyUI ------------
 def calculate_weight_adjust_channel(func):
